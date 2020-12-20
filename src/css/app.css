@@ -7,7 +7,9 @@
 body {
   margin-left: 3em;
   margin-right: 3em;
-  /* justify-content: center; */
+  display: flex;
+  flex-direction: column;
+  background-color: #bdbab9;
 }
 
 .name {
@@ -33,4 +35,25 @@ body {
 .footer > button {
   width: 8%;
   height: 35px;
+}
+
+.msg {
+  /* border: 1px solid; */
+  margin: 5px;
+  padding: 3px;
+  border-radius: 5px;
+  color: white;
+}
+
+.announce {
+  background-color: #732005;
+  text-align: center;
+}
+
+.sent {
+  background-color: #024d20;
+}
+
+.received {
+  background-color: #282929;
 }

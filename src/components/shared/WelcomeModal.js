@@ -8,16 +8,16 @@ function WelcomeModal(props) {
   }
 
   if (props.show) {
-    // return(
-    //   <div className='modal' style={{display: "block"}}>
-    //     <div className='modal-content'>
-    //       <h3>Welcome to the Chat Room</h3>
-    //       <h5>What is your name?</h5>
-    //       <input type="text" ref={nameInput} className="name" name="name" /><br />
-    //       <button onClick={onSubmit}>Enter!</button>
-    //     </div>
-    //   </div>
-    // );
+    return(
+      <div className='modal' style={{display: "block"}}>
+        <div className='modal-content'>
+          <h3>Welcome to the Chat Room</h3>
+          <h5>What is your name?</h5>
+          <input type="text" ref={nameInput} className="name" name="name" /><br />
+          <button onClick={onSubmit}>Enter!</button>
+        </div>
+      </div>
+    );
   }
   return null;
 };

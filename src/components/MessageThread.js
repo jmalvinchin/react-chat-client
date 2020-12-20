@@ -9,7 +9,7 @@ function MessageThread(props) {
     <div>
       {props.messages.map(message => {
         return (
-          <Message key={uuidv4()} content={message} />
+          <Message key={uuidv4()} content={message} sender={props.username} />
         );
       })}
     </div>

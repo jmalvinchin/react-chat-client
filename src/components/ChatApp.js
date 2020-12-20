@@ -19,7 +19,7 @@ function ChatApp(props) {
         setState({...state, messages: [...state.messages, data]})
       },
       speak(message) {
-        this.perform('speak', { message, name: "lalala" })
+        this.perform('speak', { message, name: state.name })
       },
       announce(content) {
         this.perform('announce', { name: content.name, type: content.type })
@@ -33,17 +33,15 @@ function ChatApp(props) {
   };
 
   return (
-    <>
     <div className="content">
       <h1>Chat Room</h1>
       <WelcomeModal
         show={state.showModal}
         onEnter={onEnter}
       />
-      <MessageThread messages={state.messages} />
+      <MessageThread messages={state.messages} username={state.name}/>
+      <MessageSender cableApp={props.cableApp} />
     </div>
-    <MessageSender cableApp={props.cableApp} />
-    </>
   );
 }
 
