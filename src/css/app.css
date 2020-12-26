@@ -55,5 +55,9 @@ body {
 }
 
 .received {
-  background-color: #282929;
+  background-color: #225f8a;
+}
+
+.sender {
+  color: #37cc5e;
 }

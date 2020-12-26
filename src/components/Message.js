@@ -13,7 +13,7 @@ function Message(props) {
   if(message) {
     return(
       <div className={messageClass}>
-        <p>{sent_by}</p>
+        <p className="sender">{sent_by}</p>
         <p>{message}</p>
       </div>
     )

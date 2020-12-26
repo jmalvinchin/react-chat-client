@@ -15,6 +15,9 @@ function ChatApp(props) {
       connected() {
         console.log("Connected now");
       },
+      disconnected() {
+        console.log("Disconnected now");
+      },
       received(data) {
         setState({...state, messages: [...state.messages, data]})
       },
@@ -25,6 +28,14 @@ function ChatApp(props) {
         this.perform('announce', { name: content.name, type: content.type })
       }
     })
+
+    return () => {
+      window.addEventListener("beforeunload", (e) => {
+        console.log("disconnecting");
+        e.preventDefault();
+        return props.cableApp.room.unsubscribe();
+      })
+    };
   });
 
   const onEnter = (name) => {
