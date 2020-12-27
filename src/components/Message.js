@@ -23,6 +23,8 @@ function Message(props) {
         <p>{chat_room_name} {type === 'join' ? 'joined' : 'left'} the channel</p>
       </div>
     )
+  } else {
+    return null;
   }
 };
 
