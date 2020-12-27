@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import MessageThread from './MessageThread'
 import MessageSender from './MessageSender'
 import WelcomeModal from './shared/WelcomeModal'
+import ChatContext from '../context/ChatContext'
 
 function ChatApp(props) {
   const [state, setState] = useState({
@@ -44,15 +45,16 @@ function ChatApp(props) {
   };
 
   return (
-    <div className="content">
-      <h1>Chat Room</h1>
-      <WelcomeModal
-        show={state.showModal}
-        onEnter={onEnter}
-      />
-      <MessageThread messages={state.messages} username={state.name}/>
-      <MessageSender cableApp={props.cableApp} />
-    </div>
+    <ChatContext.Provider value={{state}} >
+      <div className="content">
+        <h1>Chat Room</h1>
+        <WelcomeModal
+          onEnter={onEnter}
+        />
+        <MessageThread messages={state.messages} username={state.name}/>
+        <MessageSender cableApp={props.cableApp} />
+      </div>
+    </ChatContext.Provider>
   );
 }
 

@@ -1,4 +1,6 @@
-import React, { useRef } from 'react'
+import React, { useRef, useContext } from 'react'
+
+import ChatContext from '../../context/ChatContext'
 
 function WelcomeModal(props) {
   const nameInput = useRef(null);
@@ -7,7 +9,9 @@ function WelcomeModal(props) {
     props.onEnter(nameInput.current.value);
   }
 
-  if (props.show) {
+  const { state } = useContext(ChatContext)
+
+  if (state.showModal) {
     return(
       <div className='modal' style={{display: "block"}}>
         <div className='modal-content'>
