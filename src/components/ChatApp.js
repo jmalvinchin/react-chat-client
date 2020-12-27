@@ -51,7 +51,7 @@ function ChatApp(props) {
         <WelcomeModal
           onEnter={onEnter}
         />
-        <MessageThread messages={state.messages} username={state.name}/>
+        <MessageThread />
         <MessageSender cableApp={props.cableApp} />
       </div>
     </ChatContext.Provider>
