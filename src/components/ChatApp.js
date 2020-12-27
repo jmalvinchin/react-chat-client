@@ -45,14 +45,14 @@ function ChatApp(props) {
   };
 
   return (
-    <ChatContext.Provider value={{state}} >
+    <ChatContext.Provider value={{state, cableApp: props.cableApp}} >
       <div className="content">
         <h1>Chat Room</h1>
         <WelcomeModal
           onEnter={onEnter}
         />
         <MessageThread />
-        <MessageSender cableApp={props.cableApp} />
+        <MessageSender />
       </div>
     </ChatContext.Provider>
   );

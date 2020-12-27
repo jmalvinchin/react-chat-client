@@ -1,11 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
+
+import ChatContext from '../context/ChatContext'
 
 function MessageSender(props) {
 
   const [message, setMessage] = useState("");
+  const { cableApp } = useContext(ChatContext);
 
   const clickButton = () => {
-    props.cableApp.room.speak(message);
+    cableApp.room.speak(message);
     setMessage("");
   }
 
