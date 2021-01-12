@@ -1,4 +1,4 @@
-import React, { useRef, useContext } from 'react'
+import React, { useRef, useContext, memo } from 'react'
 
 import ChatContext from '../../context/ChatContext'
 
@@ -26,4 +26,4 @@ function WelcomeModal(props) {
   return null;
 };
 
-export default WelcomeModal;
+export default memo(WelcomeModal);
